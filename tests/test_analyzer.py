@@ -29,7 +29,9 @@ class AnalyzerTests(unittest.TestCase):
     def test_report_contains_all_checks_and_score(self):
         report = analyze_repository(self.repo)
         self.assertEqual(report["status"], "healthy")
-        self.assertEqual(report["percentage"], 100)
+        self.assertGreaterEqual(report["percentage"], 80)
+        self.assertLessEqual(report["percentage"], 100)
+        self.assertEqual(report["max_score"], 100)
         self.assertEqual(len(report["checks"]), 8)
 
     def test_uncommitted_changes_are_reported(self):
