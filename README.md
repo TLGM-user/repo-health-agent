@@ -43,5 +43,5 @@ check includes its status, score contribution, and explanation in JSON output.
 Run the test suite from the repository root:
 
 ```powershell
-python -m unittest discover -s tests -v
+python -m unittest discover -s tests -v 
 ```
